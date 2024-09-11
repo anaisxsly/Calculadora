@@ -1,0 +1,14 @@
+{
+    "name": "calculadora-electron",
+    "version": "1.0.0",
+    "description": "Una calculadora simple usando Electron",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron .",
+      "package": "electron-packager . calculadora-electron --platform=win32 --arch=x64 --out=dist --overwrite"
+    },
+    "devDependencies": {
+      "electron": "^XX.XX.X"
+    }
+  }
+  

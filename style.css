@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a783e0; /* Fondo pagina*/
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 680px; /* Altura mínima para evitar que se corte */
+}
+
+.calculator {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #222; /* Fondo calculadora */
+    padding: 20px; /* Espacio entre el borde y los botones */
+    transform-origin: top left;
+}
+
+.display {
+    background-color: #3b3a3a;
+    color: #fff;
+    font-size: 2.5rem; /* Tamaño de fuente aumentado */
+    padding: 10px; /* Espacio entre el texto y el borde */
+    text-align: right;
+    box-sizing: border-box;
+    height: 80px; /* Grosor de la pantalla */
+    border-radius: 15px; /* Bordes curvos*/
+    overflow: hidden; /* para que el texto no se salga de la pantallita */
+    margin-bottom: 20px; /* Espacio entre la pantalla y los botones */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* cant. columnas */
+    grid-template-rows: repeat(5, 70px); /* cant. filas */
+    gap: 10px;
+    background-color: #222; /* Color de los espacios entre los botones */
+}
+
+button {
+    background-color: #4C4C4C;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem; /* Tamaño de fuente aumentado */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #eea7d3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #888;
+}
+
+button.operator {
+    background-color: #a151ec; /* color botones de operaciones (suma, resta, etc.) */
+}
+
+button#equals {
+    background-color: #e686e9; /* color del boton = */
+    color: white;
+    grid-column: span 2;
+    height: 70px; /* Ajusta el tamaño del boton */
+}
+
+button#zero {
+    grid-column: span 2; /* cant. columnas que ocupa el boton (2 en este caso) */
+}
+
+/* botones AC y DEL */
+button#clear, button#delete {
+    background-color: hwb(308 71% 0%); /* ajusta color */
+    color: rgb(66, 64, 64); /* color de texto del boton */
+}
+
+button#clear:hover, button#delete:hover {
+    background-color: #FFCCE5; /* color más claro al pasar el mouse */
+}
+
+button#clear:active, button#delete:active {
+    background-color: #FF99CC; /* color más oscuro al hacer clic */
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .calculator {
+        transform: scale(0.8);
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .calculator {
+        transform: scale(0.9);
+    }
+}
+
+/* Pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+    .calculator {
+        transform: scale(1);
+    }
+}
